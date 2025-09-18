@@ -27,3 +27,7 @@ Activation functions add Non-linearity.  Multiple Linear layers is essentially t
 
 ### Useful Things to Know:
 - Vanishing Gradients: During backprop, if the derivative of an activation is very small, <1, repeated multiplication through layers can make gradients tiny -> weights stop updating
+
+### Autograd:
+- requires_grad : -> Tells a tensor that it needs to be able to compute the gradients of a loss ufnction with respect to some variables.
+- with torch.no_grad(): -> we only want to do forward computations through the network. (.detatch() also works.)
