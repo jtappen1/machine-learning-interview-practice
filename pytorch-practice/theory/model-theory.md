@@ -1,4 +1,4 @@
-# Model Theory:
+# ML Theory:
 
 ## CNN:
 - conv2D Layers: (input channels, output channels, kernel size, stride)
@@ -44,14 +44,28 @@ Used generally in hidden layers.
     - This solves the Dying ReLU problem.  If a neurons' input is consistently negative, it will output a zero gradient due to Relu.  This helps Neurons form becoming permantly inactive
 
 
-# Optimizers:
-
+## Optimizers:
 SGD:
-- Computes the gradient using only a single randomly chosen data point. The weights are then updated for every singel data point.  The Stoastic part comes from the randomness in which datapoint you pick.
+- Computes the gradient using only a single randomly chosen data point. The weights are then updated for every single data point.  The Stoastic part comes from the randomness in which datapoint you pick.
 - Momentum is the main hyperparameter.  
 - Overall: Good baseline, very sensitive to noise but due to that sensitivity, can get out of local minimas.
 
 Adam: 
-- Combines Adagrad and RMSprop, incorporates momentum as well as a exponential decaing average of past squared gradients to scale the learning rate.
+- Combines Adagrad and RMSprop, incorporates momentum as well as an exponential decaying average of past squared gradients to scale the learning rate.
 - Has quick convergence, good for complex models.
 
+## Scoring
+Precision:
+- Precision measures the proportion of relevant retrieved instances compared to all of the elements that were retrieved.
+- $$Precision = \frac{TP}{TP + FP}$$
+- Essentially, how accurate were we when predicting a person was a person.  How precise my predictions are.
+
+Recall:
+- Recall measures the amount of relevant retrieved instances compared to all relevant instances.
+- $$Recall = \frac{TP}{TP + FN}$$
+- Essentially, how accurate were we on all real occurances. Tells us how may of the True Positive cases the Model actually found.
+- Out of all the actual cats that exist, how many did I successfully remember and identify?
+
+F1 Score: 
+- Essentially the Harmonic mean of precision and recall.  High if both are high.
+- $$ F1 = 2 \cdot \frac{Precision * Recall}{Precision + Recall}$$

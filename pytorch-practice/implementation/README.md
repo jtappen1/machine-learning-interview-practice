@@ -27,7 +27,7 @@ https://github.com/Devinterview-io/pytorch-interview-questions
 3. Set up the Loss function, Optimizer, Model:
     - Inititalize the model
     - Inititalize the Loss function
-    - Initialize the Optimizer, passing in the model parameters
+    - Initialize the Optimizer, passing in the model parameters and the Learning rate
 
 4. Create Training Loop:
     - 
