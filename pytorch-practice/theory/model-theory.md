@@ -32,3 +32,26 @@ Formula : $$ CE = - \sum{i=1}{C} y_{i} \cdot log(\hat{y_{i}})$$
 - Binary Cross Extropy Loss essentially does the same thing.  However, it has only two choices.  A sigmoid is used to squash the probabilities between 0 and 1. 
 Formula $$ BCE = - [y \cdot log(\hat{y}) + (1-y)\cdot (1-\hat{y})]$$
 
+
+## Activation Functions:
+The point of Activation functions is to add non-linearity into systems that would be otherwise linear. This helps the models learn to predict other patterns that would not be possible with a simple linear model. Also, these are the gradients, not the function themselves values.
+
+ReLU Family: 
+Used generally in hidden layers.
+
+- ReLU: $f(x) = max(0,x)$ essentially sets a lower threshold at zero. Anything below zero is zero.  It is very cheap to do and prevents the vanishing gradient problem.
+- Leaky ReLU: Allows a small non-zero gradient $\alpha$ for negative inputs.
+    - This solves the Dying ReLU problem.  If a neurons' input is consistently negative, it will output a zero gradient due to Relu.  This helps Neurons form becoming permantly inactive
+
+
+# Optimizers:
+
+SGD:
+- Computes the gradient using only a single randomly chosen data point. The weights are then updated for every singel data point.  The Stoastic part comes from the randomness in which datapoint you pick.
+- Momentum is the main hyperparameter.  
+- Overall: Good baseline, very sensitive to noise but due to that sensitivity, can get out of local minimas.
+
+Adam: 
+- Combines Adagrad and RMSprop, incorporates momentum as well as a exponential decaing average of past squared gradients to scale the learning rate.
+- Has quick convergence, good for complex models.
+
