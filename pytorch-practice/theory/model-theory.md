@@ -30,7 +30,7 @@ Formula : $$ CE = - \sum{i=1}{C} y_{i} \cdot log(\hat{y_{i}})$$
 - Binary Cross Entropy (nn.BCELoss()) : Used for binary classifcation:  More stable and includes the Sigmoid activation
 - (nn.BCEWithLogitsLoss()): This is applied directly to the logits and is the preferered method of using BCE Loss.  This is because it uses the trick to handle very small/large log-probabilities.  Either way, BCE requires a sigmoid before to squash the probabilites between 0, 1.
 - Binary Cross Extropy Loss essentially does the same thing.  However, it has only two choices.  A sigmoid is used to squash the probabilities between 0 and 1. 
-Formula $$ BCE = - [y \cdot log(\hat{y}) + (1-y)\cdot (1-\hat{y})]$$
+Formula $$ BCE = - [y \cdot log(\hat{y}) + (1-y)\cdot log(1-\hat{y})]$$
 
 
 ## Activation Functions:
